@@ -11,29 +11,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <style jsx>
         {`
-        h2{
-          font-size: 38px;
-        }
-        h3{
-          font-size: 28px;
-        }
+          h2 {
+            font-size: 38px;
+          }
+          h3 {
+            font-size: 28px;
+          }
         `}
       </style>
-
-
 
       <main className={styles.main}>
         <h1 className={styles.title}>FANTASTIC-GIGGLE blogs</h1>
 
-        <Image className={styles.myImg}
-        src="/florian-olivo-4hbJ-eymZ1o-unsplash.jpg"
-        alt="Landscape picture"
-        width={237}
-        height={158}
-      />
+        <Image
+          className={styles.myImg}
+          src="/florian-olivo-4hbJ-eymZ1o-unsplash.jpg"
+          alt="Landscape picture"
+          width={237}
+          height={158}
+        />
 
         <div className="blogs">
           <h2>Popular Blogs</h2>
