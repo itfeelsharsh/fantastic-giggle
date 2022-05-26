@@ -131,3 +131,13 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.aboutus{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.center{
+  justify-content: center;
+}
