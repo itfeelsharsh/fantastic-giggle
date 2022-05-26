@@ -1,14 +1,27 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import * as fs from 'fs';
+import * as fs from "fs";
 
-export default function handler(req, res) {
-    fs.readFile("./data/how-to-learn-css.json", "utf8", (err, data) => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        res.status(200).json(JSON.parse(data));
-        console.log(JSON.parse(data));
-    });}
-  
+export default async function handler(req, res) {
+  let data = await fs.promises.readdir("./data");
+  let myfile;
+  let allBlogs = [];
+
+  for (let index = 0; index < data.length; index++) {
+    const item = data[index];
+    console.log(item);
+    myfile = await fs.promises.readFile("./data/" + item, "utf-8");
+    allBlogs.push(JSON.parse(myfile));
+  }
+
+  res.status(200).json(allBlogs);
+
+  //   fs.promises.readdir("./data", (err, data) => {
+  //     console.log(data);
+  //     let allBlogs = [];
+
+  //     });
+  //   });
+  //   res.status(200).json(allBlogs);
+}
+ 
