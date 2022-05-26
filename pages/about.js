@@ -2,6 +2,9 @@ import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
+//Collecting DATA from DATABASE(../data)
+
+//Display the Data
 const about = () => {
   <Head>
     <title>About Us - FANTASTIC-GIGGLE blogs</title>
@@ -11,7 +14,6 @@ const about = () => {
     />
     <link rel="icon" href="/favicon.ico" />
   </Head>;
-
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>FANTASTIC-GIGGLE blogs</h1>

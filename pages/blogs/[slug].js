@@ -2,6 +2,10 @@ import React from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/Blog.module.css";
 
+//Find the slug from the url and URL data related
+
+//
+
 const slug = () => {
   const router = useRouter();
   const { slug } = router.query;
