@@ -1,30 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import styles from "../../styles/Blog.module.css";
+import styles from "../../styles/Blogs.module.css";
 
-//Find the slug from the url and URL data related
-
-//
-
+// Step 1: Find the file corresponding to the slug
+// Step 2: Populate them inside the page
 const slug = () => {
+  const [blog, setBlog] = useState();
   const router = useRouter();
-  const { slug } = router.query;
+  useEffect(() => {
+    if (!router.isReady) return;
+    const { slug } = router.query;
+    fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
+      .then((a) => {
+        return a.json();
+      })
+      .then((parsed) => {
+        setBlog(parsed);
+      });
+  }, [router.isReady]);
 
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1>Title of the page {slug}</h1>
+        <h1>{blog && blog.title}</h1>
         <hr />
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          adipisci eos vitae, nesciunt, aut nulla ratione pariatur soluta,
-          maxime harum in sequi distinctio eum dolor fuga eaque nostrum placeat
-          fugiat natus alias voluptatem architecto. Rerum similique eius
-          possimus praesentium repudiandae saepe error cumque ipsam. Obcaecati
-          corporis minima neque laboriosam iste commodi id rerum. Consequatur
-          eius quo et repudiandae reiciendis voluptate sapiente. Est dolores
-          voluptatum excepturi voluptatibus esse suscipit delectus?
-        </div>
+        <div>{blog && blog.content}</div>
       </main>
     </div>
   );
