@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -12,13 +12,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className={styles.mainNav} >
+
+      <style jsx>
+        {`
+
+        `}
+      </style>
+
+      <nav className={styles.mainNav}>
         <ul>
-          <Link href='/'>
-          <a>Home</a>
+          <Link href="/">
+            <a>Home</a>
           </Link>
           <Link href="/about">
-            <a>About</a>
+            <a>About</a> 
           </Link>
           <Link href="/blog">
             <a>Blogs</a>
@@ -30,9 +37,14 @@ export default function Home() {
       </nav>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to FANTASTIC-GIGGLE blogs
-        </h1>
+        <h1 className={styles.title}>FANTASTIC-GIGGLE blogs</h1>
+
+        <Image className={styles.myImg}
+        src="/florian-olivo-4hbJ-eymZ1o-unsplash.jpg"
+        alt="Landscape picture"
+        width={237}
+        height={158}
+      />
 
         <div className="blogs">
           <h2>Popular Blogs</h2>
@@ -49,10 +61,7 @@ export default function Home() {
             <p>HTML is the body of website! lets learn it.</p>
           </div>
         </div>
-
-
       </main>
-
     </div>
-  )
+  );
 }
