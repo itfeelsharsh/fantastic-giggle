@@ -15,7 +15,12 @@ export default function Home() {
 
       <style jsx>
         {`
-
+        h2{
+          font-size: 38px;
+        }
+        h3{
+          font-size: 28px;
+        }
         `}
       </style>
 
