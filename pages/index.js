@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -24,22 +23,7 @@ export default function Home() {
         `}
       </style>
 
-      <nav className={styles.mainNav}>
-        <ul>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/about">
-            <a>About</a> 
-          </Link>
-          <Link href="/blog">
-            <a>Blogs</a>
-          </Link>
-          <Link href="/contact">
-            <a>Contact</a>
-          </Link>
-        </ul>
-      </nav>
+
 
       <main className={styles.main}>
         <h1 className={styles.title}>FANTASTIC-GIGGLE blogs</h1>
